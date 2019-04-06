@@ -69,6 +69,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_auth',
+    'rest_auth.registration',
 ]
 LOCAL_APPS = [
     'apps.users.apps.UsersAppConfig',
@@ -251,10 +252,15 @@ CELERYD_TASK_SOFT_TIME_LIMIT = 60
 
 # django-allauth
 # ------------------------------------------------------------------------------
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = env.bool('DJANGO_ACCOUNT_EMAIL_VERIFICATION', 'none')
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_EMAIL_REQUIRED = True
+
 # DJANGO REST FRAMEWORK
 # ------------------------------------------------------------------------------
 REST_FRAMEWORK = {
