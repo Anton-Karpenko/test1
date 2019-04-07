@@ -2,6 +2,8 @@
 Base settings to build other settings files upon.
 """
 
+from datetime import timedelta
+
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (root/config/settings/base.py - 3 = root/)
@@ -287,3 +289,8 @@ REST_AUTH_SERIALIZERS = {
 REST_USE_JWT = True
 # https://django-rest-auth.readthedocs.io/en/latest/installation.html#jwt-support-optional
 
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': timedelta(days=300),
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_AUTH_HEADER_PREFIX': 'Token',
+}
