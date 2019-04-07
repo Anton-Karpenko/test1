@@ -273,6 +273,7 @@ REST_FRAMEWORK = {
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
+    'DEFAULT_PAGINATION_CLASS': 'apps.base.pagination.BaseResultsSetPagination',
 }
 # https://www.django-rest-framework.org/api-guide/settings/
 
