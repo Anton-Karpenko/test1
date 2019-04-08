@@ -36,9 +36,15 @@ class Item(TimeStampedModel):
     views_count = models.PositiveIntegerField(
         default=0
     )
+    price = models.DecimalField(
+        max_digits=8,
+        decimal_places=2,
+        default=0.0
+    )
 
     class Meta:
         db_table = 'items'
+        ordering = 'created',
 
     def __str__(self):
         return self.title
