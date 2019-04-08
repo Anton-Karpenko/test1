@@ -72,6 +72,7 @@ THIRD_PARTY_APPS = [
     'drf_yasg',
     'rest_auth',
     'rest_auth.registration',
+    'django_filters',
 ]
 LOCAL_APPS = [
     'apps.users.apps.UsersAppConfig',
@@ -277,6 +278,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PAGINATION_CLASS': 'apps.base.pagination.BaseResultsSetPagination',
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 }
 # https://www.django-rest-framework.org/api-guide/settings/
 
