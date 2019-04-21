@@ -9,9 +9,8 @@
     CELERY_BROKER_URL=redis://redis:6379/0
     ```
 5. `make migrate`
-6. Create `static` dir in root directory
-7. `make superuser`
-8. `make server`
+6. `make superuser`
+7. `make server`
 
 ### Links
 [Swagger documentation](http://127.0.0.1:8000/swagger)
